@@ -1,0 +1,13 @@
+services:
+  api-reserve-ja-pg:
+    image: bitnami/postgresql:latest
+    container_name: api-reserve-ja-pg
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - pg_data:/bitnami/postgresql
+
+volumes:
+  pg_data:

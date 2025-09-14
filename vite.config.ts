@@ -6,8 +6,28 @@ export default defineConfig({
   test: {
     dir: "src",
     globals: true,
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          dir: "src/tests/units/",
+          include: ["**/*.{test,unit.spec}.?(c|m)[jt]s?(x)"],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "integration",
+          dir: "src/tests/integrations/",
+          include: ["**/*.{test,integration.spec}.?(c|m)[jt]s?(x)"],
+          environment:
+            "./prisma/vitest-environment-prisma/prisma-test-environment.ts",
+        },
+      },
+    ],
     coverage: {
-      include: ["src/use-cases/**"],
+      include: ["src/application/use-cases/**"],
     },
   },
 });
