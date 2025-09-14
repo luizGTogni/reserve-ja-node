@@ -39,6 +39,7 @@
         "husky": "9.1.7",
         "lint-staged": "16.1.6",
         "prettier": "3.6.2",
+        "prisma": "6.16.1",
         "ts-node": "10.9.2",
         "typescript": "5.9.2",
         "vite": "7.1.5",
@@ -46,6 +47,7 @@
         "vitest": "3.2.4"
     },
     "dependencies": {
+        "@prisma/client": "6.16.1",
         "dotenv": "17.2.2",
         "zod": "4.1.8"
     }
