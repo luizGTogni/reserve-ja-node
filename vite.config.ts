@@ -11,7 +11,7 @@ export default defineConfig({
         extends: true,
         test: {
           name: "unit",
-          dir: "src/application/use-cases",
+          dir: "src/tests/units/",
           include: ["**/*.{test,unit.spec}.?(c|m)[jt]s?(x)"],
         },
       },
@@ -19,7 +19,7 @@ export default defineConfig({
         extends: true,
         test: {
           name: "integration",
-          dir: "src/application/use-cases",
+          dir: "src/tests/integrations/",
           include: ["**/*.{test,integration.spec}.?(c|m)[jt]s?(x)"],
           environment:
             "./prisma/vitest-environment-prisma/prisma-test-environment.ts",
