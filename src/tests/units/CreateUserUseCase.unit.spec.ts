@@ -20,7 +20,7 @@ let spyCreate: MockInstance;
 
 describe("Create User Use Case (Unit)", () => {
   beforeEach(() => {
-    mockHasher = mockHasher = {
+    mockHasher = {
       toHash: vi.fn(async (plain: string) => `hashed-${plain}`),
       compare: vi.fn(
         async ({ plain, hashed }: CompareParams) =>
