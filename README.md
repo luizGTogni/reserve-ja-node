@@ -20,6 +20,7 @@ Oferecer recomendações personalizadas para usuários (hóspedes encontram melh
 ## Requisitos Funcionais
 
 - [x] Cadastro de usuários: viajante, anfitrião, admin.
+- [x] Autenticar Usuário
 - [ ] Cadastro de propriedades: fotos, descrição, localização, regras da casa.
 - [ ] Busca e filtros: localização, preço, comodidades, datas disponíveis.
 - [ ] Reserva online: pagamento feito no ato (PIX/cartão simulado), valor bloqueado até check-in.
