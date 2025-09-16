@@ -1,7 +1,7 @@
 import type { User } from "@/domain/entities/User";
-import { UserAlreadyExistsError } from "../errors/UserAlreadyExistsError";
-import type { IUsersRepository } from "../repositories/IUsersRepository";
-import type { IHasher } from "../services/IHasher";
+import { UserAlreadyExistsError } from "../../errors/UserAlreadyExistsError";
+import type { IUsersRepository } from "../../repositories/IUsersRepository";
+import type { IHasher } from "../../services/IHasher";
 
 type CreateUserRequest = {
   name: string;

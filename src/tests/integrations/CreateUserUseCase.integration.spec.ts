@@ -1,7 +1,7 @@
 import { UserAlreadyExistsError } from "@/application/errors/UserAlreadyExistsError";
 import type { IUsersRepository } from "@/application/repositories/IUsersRepository";
 import type { IHasher } from "@/application/services/IHasher";
-import { CreateUserUseCase } from "@/application/use-cases/CreateUserUseCase";
+import { CreateUserUseCase } from "@/application/use-cases/users/CreateUserUseCase";
 import { BcryptHasher } from "@/infrastructure/drivers/hashers/BcryptHasher";
 import { prisma } from "@/infrastructure/prisma/client";
 import { PrismaUsersRepository } from "@/infrastructure/repositories/prisma/PrismaUsersRepository";

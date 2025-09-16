@@ -1,7 +1,7 @@
 import type { User } from "@/domain/entities/User";
-import { InvalidCredentialsError } from "../errors/InvalidCredentialsError";
-import type { IUsersRepository } from "../repositories/IUsersRepository";
-import type { IHasher } from "../services/IHasher";
+import { InvalidCredentialsError } from "../../errors/InvalidCredentialsError";
+import type { IUsersRepository } from "../../repositories/IUsersRepository";
+import type { IHasher } from "../../services/IHasher";
 
 type AuthenticateRequest = {
   email: string;

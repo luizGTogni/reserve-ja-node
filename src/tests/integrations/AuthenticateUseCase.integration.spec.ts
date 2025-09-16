@@ -1,7 +1,7 @@
 import { InvalidCredentialsError } from "@/application/errors/InvalidCredentialsError";
 import type { IUsersRepository } from "@/application/repositories/IUsersRepository";
 import type { IHasher } from "@/application/services/IHasher";
-import { AuthenticateUseCase } from "@/application/use-cases/AuthenticateUseCase";
+import { AuthenticateUseCase } from "@/application/use-cases/users/AuthenticateUseCase";
 import { BcryptHasher } from "@/infrastructure/drivers/hashers/BcryptHasher";
 import { prisma } from "@/infrastructure/prisma/client";
 import { PrismaUsersRepository } from "@/infrastructure/repositories/prisma/PrismaUsersRepository";

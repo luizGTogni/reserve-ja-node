@@ -2,7 +2,7 @@ import { InvalidCredentialsError } from "@/application/errors/InvalidCredentials
 import type { IUsersRepository } from "@/application/repositories/IUsersRepository";
 import type { IHasher } from "@/application/services/IHasher";
 import type { CompareParams } from "@/application/services/types/IHasher.types";
-import { AuthenticateUseCase } from "@/application/use-cases/AuthenticateUseCase";
+import { AuthenticateUseCase } from "@/application/use-cases/users/AuthenticateUseCase";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { InMemoryUsersRepository } from "./mocks/InMemoryUsersRepository";
 

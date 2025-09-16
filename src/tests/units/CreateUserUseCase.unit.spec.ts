@@ -2,7 +2,7 @@ import { UserAlreadyExistsError } from "@/application/errors/UserAlreadyExistsEr
 import type { IUsersRepository } from "@/application/repositories/IUsersRepository";
 import type { IHasher } from "@/application/services/IHasher";
 import type { CompareParams } from "@/application/services/types/IHasher.types";
-import { CreateUserUseCase } from "@/application/use-cases/CreateUserUseCase";
+import { CreateUserUseCase } from "@/application/use-cases/users/CreateUserUseCase";
 import {
   beforeEach,
   describe,
