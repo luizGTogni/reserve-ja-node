@@ -23,5 +23,51 @@ model User {
     created_at    DateTime @default(dbgenerated("now()"))
     updated_at    DateTime @default(dbgenerated("now()")) @updatedAt
 
+    property Property[]
+
     @@map("users")
+}
+
+enum RefundPolicy {
+    TOTAL
+    PARCIAL
+}
+
+model Property {
+    id            String       @id @default(nanoid())
+    title         String
+    description   String
+    latitude      Decimal
+    longitude     Decimal
+    price_base    Decimal
+    capacity      Int
+    refund_policy RefundPolicy @default(TOTAL)
+    created_at    DateTime     @default(now())
+    updated_at    DateTime     @default(now()) @updatedAt
+
+    host              User                @relation(fields: [host_id], references: [id])
+    host_id           String
+    PropertyToAmenity PropertyToAmenity[]
+
+    @@map("properties")
+}
+
+model PropertyToAmenity {
+    property_id String
+    amenity_id  String
+
+    property Property @relation(fields: [property_id], references: [id])
+    amenity  Amenity  @relation(fields: [amenity_id], references: [id])
+
+    @@id([property_id, amenity_id])
+    @@map("property_amenities")
+}
+
+model Amenity {
+    id                String              @id @default(uuid())
+    title             String              @unique
+    description       String?
+    PropertyToAmenity PropertyToAmenity[]
+
+    @@map("amenities")
 }
