@@ -21,7 +21,7 @@ Oferecer recomendações personalizadas para usuários (hóspedes encontram melh
 
 - [x] Cadastro de usuários: viajante, anfitrião, admin.
 - [x] Autenticar Usuário
-- [ ] Cadastro de propriedades: fotos, descrição, localização, regras da casa.
+- [x] Cadastro de propriedades: fotos, descrição, localização, regras da casa.
 - [ ] Busca e filtros: localização, preço, comodidades, datas disponíveis.
 - [ ] Reserva online: pagamento feito no ato (PIX/cartão simulado), valor bloqueado até check-in.
 - [ ] Política de cancelamento: reembolso total/parcial conforme regra do anfitrião.
@@ -48,3 +48,10 @@ Oferecer recomendações personalizadas para usuários (hóspedes encontram melh
 - [ ] Usuário só pode avaliar anfitrião após estadia concluída.
 - [ ] Reservas suspeitas podem ser bloqueadas pelo admin.
 - [ ] Se anfitrião cancelar várias vezes, é penalizado.
+
+
+- Comece com o esqueleto (auth, cadastro, reserva fake).
+- Depois coloque pagamento (api de pagamento para testes) + regras de negócio críticas (bloqueio, cancelamento).
+
+- Só então vá para diferenciais de IA e precificação dinâmica.
+- Finalize com dashboards, notificações e extras que enriquecem a experiência.
