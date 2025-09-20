@@ -55,8 +55,8 @@ describe("Create Booking Use Case (Integration)", () => {
       userId: user.id,
       propertyId: property.id,
       numberGuests: 6,
-      checkInAt: new Date(2025, 8, 20),
-      checkOutAt: new Date(2025, 8, 24),
+      checkInAt: new Date(Date.UTC(2025, 8, 20)),
+      checkOutAt: new Date(Date.UTC(2025, 8, 24)),
     });
 
     expect(booking).toHaveProperty("id");
@@ -65,8 +65,8 @@ describe("Create Booking Use Case (Integration)", () => {
       expect.objectContaining({
         user_id: user.id,
         property_id: property.id,
-        checkin_at: new Date("2025-09-20T03:00:00.000Z"),
-        checkout_at: new Date("2025-09-24T03:00:00.000Z"),
+        checkin_at: new Date("2025-09-20T00:00:00.000Z"),
+        checkout_at: new Date("2025-09-24T00:00:00.000Z"),
         number_guest: 6,
         status: "PENDING",
         value_base: 100,
@@ -84,8 +84,8 @@ describe("Create Booking Use Case (Integration)", () => {
         userId: user.id,
         propertyId: "property_id_not_found",
         numberGuests: 6,
-        checkInAt: new Date(2025, 8, 23),
-        checkOutAt: new Date(2025, 8, 28),
+        checkInAt: new Date(Date.UTC(2025, 8, 20)),
+        checkOutAt: new Date(Date.UTC(2025, 8, 24)),
       }),
     ).rejects.toBeInstanceOf(PropertyNoLongerAvailableError);
   });
@@ -107,8 +107,8 @@ describe("Create Booking Use Case (Integration)", () => {
       userId: user.id,
       propertyId: property.id,
       numberGuests: 6,
-      checkInAt: new Date(2025, 8, 20),
-      checkOutAt: new Date(2025, 8, 24),
+      checkInAt: new Date(Date.UTC(2025, 8, 20)),
+      checkOutAt: new Date(Date.UTC(2025, 8, 24)),
     });
 
     await expect(() =>
@@ -116,8 +116,8 @@ describe("Create Booking Use Case (Integration)", () => {
         userId: user.id,
         propertyId: property.id,
         numberGuests: 6,
-        checkInAt: new Date(2025, 8, 23),
-        checkOutAt: new Date(2025, 8, 28),
+        checkInAt: new Date(Date.UTC(2025, 8, 23)),
+        checkOutAt: new Date(Date.UTC(2025, 8, 28)),
       }),
     ).rejects.toBeInstanceOf(PropertyAlreadyBookedError);
   });
@@ -140,8 +140,8 @@ describe("Create Booking Use Case (Integration)", () => {
         userId: user.id,
         propertyId: property.id,
         numberGuests: 10,
-        checkInAt: new Date(2025, 8, 23),
-        checkOutAt: new Date(2025, 8, 28),
+        checkInAt: new Date(Date.UTC(2025, 8, 20)),
+        checkOutAt: new Date(Date.UTC(2025, 8, 24)),
       }),
     ).rejects.toBeInstanceOf(ValueInvalidError);
   });
