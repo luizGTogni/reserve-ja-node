@@ -1,5 +1,4 @@
-export interface Booking {
-  id: string;
+export type BookingCreate = {
   user_id: string;
   property_id: string;
   checkin_at: Date;
@@ -11,4 +10,4 @@ export interface Booking {
   value_tax: number;
   platform_fee: number;
   status: "PENDING" | "CONFIRMED" | "CANCELED" | "COMPLETED";
-}
+};
