@@ -2,7 +2,7 @@ import { ValueInvalidError } from "@/application/errors/ValueInvalidError";
 import type { IPropertiesRepository } from "@/application/repositories/IPropertiesRepository";
 import type { Property } from "@/domain/entities/Property";
 
-interface CreatePropertyRequest {
+type CreatePropertyRequest = {
   userId: string;
   title: string;
   description: string;
@@ -11,11 +11,11 @@ interface CreatePropertyRequest {
   price_base: number;
   capacity: number;
   refund_policy: "TOTAL" | "PARCIAL";
-}
+};
 
-interface CreatePropertyResponse {
+type CreatePropertyResponse = {
   property: Property;
-}
+};
 
 export class CreatePropertyUseCase {
   constructor(private readonly propertiesRepository: IPropertiesRepository) {}
