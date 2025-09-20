@@ -20,6 +20,7 @@ export class InMemoryUsersRepository implements IUsersRepository {
       name: data.name,
       email: data.email,
       password_hash: data.password,
+      role: "GUEST",
       created_at: new Date(),
       updated_at: new Date(),
     };

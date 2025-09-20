@@ -24,6 +24,7 @@ model User {
     updated_at    DateTime @default(dbgenerated("now()")) @updatedAt
 
     property Property[]
+    Booking  Booking[]
 
     @@map("users")
 }
@@ -48,6 +49,7 @@ model Property {
     host              User                @relation(fields: [host_id], references: [id])
     host_id           String
     PropertyToAmenity PropertyToAmenity[]
+    Booking           Booking[]
 
     @@map("properties")
 }
@@ -70,4 +72,31 @@ model Amenity {
     PropertyToAmenity PropertyToAmenity[]
 
     @@map("amenities")
+}
+
+enum StatusBooking {
+    PENDING
+    CONFIRMED
+    CANCELED
+    COMPLETED
+}
+
+model Booking {
+    id           String        @id @default(uuid())
+    checkin_at   DateTime
+    checkout_at  DateTime
+    number_guest Int
+    value_base   Decimal
+    value_guest  Decimal
+    value_host   Decimal
+    value_tax    Decimal
+    platform_fee Decimal
+    status       StatusBooking @default(PENDING)
+    user_id      String
+    property_id  String
+
+    user     User     @relation(fields: [user_id], references: [id])
+    property Property @relation(fields: [property_id], references: [id])
+
+    @@map("bookings")
 }
