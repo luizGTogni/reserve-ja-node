@@ -4,6 +4,25 @@ import { Decimal } from "@/generated/prisma/runtime/library";
 import { prisma } from "@/infrastructure/prisma/client";
 
 export class PrismaPropertiesRepository implements IPropertiesRepository {
+  async findById(id: string) {
+    const property = await prisma.property.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    if (!property) {
+      return null;
+    }
+
+    return {
+      ...property,
+      latitude: property.latitude.toNumber(),
+      longitude: property.longitude.toNumber(),
+      price_base: property.price_base.toNumber(),
+    };
+  }
+
   async create(data: PropertyCreate) {
     const property = await prisma.property.create({
       data: {

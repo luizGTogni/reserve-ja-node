@@ -6,6 +6,10 @@ import { randomUUID } from "crypto";
 export class InMemoryPropertiesRepository implements IPropertiesRepository {
   private properties: Property[] = [];
 
+  async findById(id: string) {
+    return this.properties.find((property) => property.id === id) || null;
+  }
+
   async create(data: PropertyCreate) {
     const propertyCreated: Property = {
       id: randomUUID(),
