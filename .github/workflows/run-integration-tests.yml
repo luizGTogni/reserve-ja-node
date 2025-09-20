@@ -41,10 +41,7 @@ jobs:
             sleep 2
           done
 
-      - name: Run prisma
-        run: pnpm prisma generate && pnpm prisma migrate deploy
-
       - name: Run integration tests
-        run: pnpm test:integration
+        run: pnpm prisma generate && pnpm prisma migrate deploy && pnpm test:integration
         env:
           DATABASE_URL: "postgresql://test_user:test_pass@localhost:5432/apireserveja?schema=public"
