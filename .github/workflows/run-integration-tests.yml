@@ -41,6 +41,9 @@ jobs:
             sleep 2
           done
 
+      - name: Run prisma
+        run: pnpm prisma generate && pnpm prisma migrate deploy
+
       - name: Run integration tests
         run: pnpm test:integration
         env:
